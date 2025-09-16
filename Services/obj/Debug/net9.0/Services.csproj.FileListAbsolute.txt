@@ -1,0 +1,15 @@
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\bin\Debug\net9.0\Services.deps.json
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\bin\Debug\net9.0\Services.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\bin\Debug\net9.0\Services.pdb
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\bin\Debug\net9.0\ServiceContracts.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\bin\Debug\net9.0\ServiceContracts.pdb
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Services.csproj.AssemblyReference.cache
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Services.AssemblyInfoInputs.cache
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Services.AssemblyInfo.cs
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Services.csproj.CoreCompileInputs.cache
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Services.csproj.Up2Date
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Services.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\refint\Services.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Services.pdb
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\ref\Services.dll

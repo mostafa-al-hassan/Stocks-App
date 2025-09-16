@@ -1,0 +1,2 @@
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\wwwroot\StyleSheet.css
+wwwroot\StyleSheet.css
