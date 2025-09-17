@@ -60,3 +60,5 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\re
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\StocksApp.pdb
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\StocksApp.genruntimeconfig.cache
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\ref\StocksApp.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\StocksApp.sourcelink.json
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\compressed\y7nh6apsz0-ak3b96vbib.gz

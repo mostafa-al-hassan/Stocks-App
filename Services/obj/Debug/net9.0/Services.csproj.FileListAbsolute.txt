@@ -13,3 +13,6 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Ser
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\refint\Services.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Services.pdb
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\ref\Services.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Services.sourcelink.json
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\bin\Debug\net9.0\Entities.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\bin\Debug\net9.0\Entities.pdb

@@ -118,7 +118,11 @@
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Entities\\Entities.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -314,14 +318,6 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
-            "Microsoft.AspNet.Identity.Core": {
-              "target": "Package",
-              "version": "[2.2.4, )"
-            },
-            "Microsoft.AspNet.WebApi": {
-              "target": "Package",
-              "version": "[5.3.0, )"
-            },
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
               "version": "[6.0.0, )"

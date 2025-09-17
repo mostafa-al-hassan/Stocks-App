@@ -10,3 +10,4 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Entities\obj\Debug\net9.0\Ent
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Entities\obj\Debug\net9.0\refint\Entities.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Entities\obj\Debug\net9.0\Entities.pdb
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Entities\obj\Debug\net9.0\ref\Entities.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Entities\obj\Debug\net9.0\Entities.sourcelink.json

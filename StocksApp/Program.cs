@@ -1,10 +1,12 @@
-using StocksApp.Services;
+using ServiceContracts;
+using Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
-builder.Services.AddScoped<FinnhubService>();
+builder.Services.AddSingleton<IStocksService, StocksService>();
+builder.Services.AddSingleton<IFinnhubService, FinnhubService>();
 
 var app = builder.Build();
 

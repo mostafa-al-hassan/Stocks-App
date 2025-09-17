@@ -10,3 +10,7 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\ServiceContracts\obj\Debug\ne
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\ServiceContracts\obj\Debug\net9.0\refint\ServiceContracts.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\ServiceContracts\obj\Debug\net9.0\ServiceContracts.pdb
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\ServiceContracts\obj\Debug\net9.0\ref\ServiceContracts.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\ServiceContracts\obj\Debug\net9.0\ServiceContracts.sourcelink.json
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\ServiceContracts\bin\Debug\net9.0\Entities.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\ServiceContracts\bin\Debug\net9.0\Entities.pdb
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\ServiceContracts\obj\Debug\net9.0\ServiceC.04662A29.Up2Date

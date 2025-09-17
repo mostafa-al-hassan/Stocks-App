@@ -1,11 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "4cPAeuXFXaI=",
+  "dgSpecHash": "o9qYIMiYNAs=",
   "success": true,
   "projectFilePath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mostafa Daud\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
+    "C:\\Users\\Mostafa Daud\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.4\\microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
+    "C:\\Users\\Mostafa Daud\\.nuget\\packages\\microsoft.aspnet.webapi\\5.3.0\\microsoft.aspnet.webapi.5.3.0.nupkg.sha512",
     "C:\\Users\\Mostafa Daud\\.nuget\\packages\\microsoft.aspnet.webapi.client\\6.0.0\\microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
+    "C:\\Users\\Mostafa Daud\\.nuget\\packages\\microsoft.aspnet.webapi.core\\5.3.0\\microsoft.aspnet.webapi.core.5.3.0.nupkg.sha512",
+    "C:\\Users\\Mostafa Daud\\.nuget\\packages\\microsoft.aspnet.webapi.webhost\\5.3.0\\microsoft.aspnet.webapi.webhost.5.3.0.nupkg.sha512",
     "C:\\Users\\Mostafa Daud\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\9.0.9\\microsoft.aspnetcore.cryptography.internal.9.0.9.nupkg.sha512",
     "C:\\Users\\Mostafa Daud\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\9.0.9\\microsoft.aspnetcore.cryptography.keyderivation.9.0.9.nupkg.sha512",
     "C:\\Users\\Mostafa Daud\\.nuget\\packages\\microsoft.codecoverage\\17.12.0\\microsoft.codecoverage.17.12.0.nupkg.sha512",
@@ -40,5 +44,42 @@
     "C:\\Users\\Mostafa Daud\\.nuget\\packages\\xunit.extensibility.execution\\2.9.2\\xunit.extensibility.execution.2.9.2.nupkg.sha512",
     "C:\\Users\\Mostafa Daud\\.nuget\\packages\\xunit.runner.visualstudio\\2.8.2\\xunit.runner.visualstudio.2.8.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'Microsoft.AspNet.Identity.Core 2.2.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "projectPath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Tests\\Tests.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Tests\\Tests.csproj",
+      "libraryId": "Microsoft.AspNet.Identity.Core",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'Microsoft.AspNet.WebApi.Core 5.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "projectPath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Tests\\Tests.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Tests\\Tests.csproj",
+      "libraryId": "Microsoft.AspNet.WebApi.Core",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'Microsoft.AspNet.WebApi.WebHost 5.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net9.0'. This package may not be fully compatible with your project.",
+      "projectPath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Tests\\Tests.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Tests\\Tests.csproj",
+      "libraryId": "Microsoft.AspNet.WebApi.WebHost",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }
