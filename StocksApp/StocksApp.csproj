@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\StyleSheet.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.9" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="9.0.9" />

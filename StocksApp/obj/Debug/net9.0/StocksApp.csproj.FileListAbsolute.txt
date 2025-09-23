@@ -48,7 +48,6 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\rj
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\scopedcss\bundle\StocksApp.styles.css
-D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\compressed\i6xnpvb7rc-9e86uow3zj.gz
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\staticwebassets.build.json
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\staticwebassets.build.json.cache
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\staticwebassets.development.json
@@ -62,3 +61,4 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\St
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\ref\StocksApp.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\StocksApp.sourcelink.json
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\compressed\y7nh6apsz0-ak3b96vbib.gz
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\compressed\i6xnpvb7rc-nsqoitlbec.gz

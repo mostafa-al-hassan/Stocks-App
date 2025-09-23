@@ -9,8 +9,6 @@
       "ServiceContracts/1.0.0": {
         "dependencies": {
           "Entities": "1.0.0",
-          "Microsoft.AspNet.Identity.Core": "2.2.4",
-          "Microsoft.AspNet.WebApi": "5.3.0",
           "Microsoft.AspNet.WebApi.Client": "6.0.0",
           "Microsoft.Extensions.Http": "9.0.9",
           "Microsoft.Extensions.Identity.Core": "9.0.9"
