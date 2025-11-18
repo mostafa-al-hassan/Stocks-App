@@ -9,19 +9,19 @@ namespace Entities
 {
     public class SellOrder
     {
-        public Guid SellOrderID;
+        public Guid SellOrderID { get; set; }
 
         [Required]
-        public string? StockSymbol;
+        public string? StockSymbol { get; set; }
         [Required]
-        public string? StockName;
+        public string? StockName { get; set; }
 
-        public DateTime DateAndTimeOfOrder;
+        public DateTime DateAndTimeOfOrder { get; set; }
 
         [Range(1, 100000)]
-        public uint Quantity;
+        public uint Quantity { get; set; }
         [Range(1, 10000)]
-        public double Price;
+        public double Price { get; set; }
 
     }
 }

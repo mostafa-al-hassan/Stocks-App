@@ -11,3 +11,5 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Entities\obj\Debug\net9.0\ref
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Entities\obj\Debug\net9.0\Entities.pdb
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Entities\obj\Debug\net9.0\ref\Entities.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Entities\obj\Debug\net9.0\Entities.sourcelink.json
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Entities\bin\Debug\net9.0\Entities.runtimeconfig.json
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Entities\obj\Debug\net9.0\Entities.genruntimeconfig.cache
