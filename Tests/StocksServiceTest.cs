@@ -16,7 +16,7 @@ namespace Tests
         public StocksServiceTest()
         {
 
-            _stocksService = new StocksService(new StockMarketDbContext(new DbContextOptionsBuilder<StockMarketDbContext>().UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()).Options));
+            _stocksService = new StocksService(new ApplicationDbContext(new DbContextOptionsBuilder<ApplicationDbContext>().UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()).Options));
         }
 
 

@@ -1228,6 +1228,20 @@
           "bin/placeholder/Entities.dll": {}
         }
       },
+      "RepositoryContracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "ServiceContracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RepositoryContracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RepositoryContracts.dll": {}
+        }
+      },
       "ServiceContracts/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -3300,6 +3314,11 @@
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
     },
+    "RepositoryContracts/1.0.0": {
+      "type": "project",
+      "path": "../RepositoryContracts/RepositoryContracts.csproj",
+      "msbuildProject": "../RepositoryContracts/RepositoryContracts.csproj"
+    },
     "ServiceContracts/1.0.0": {
       "type": "project",
       "path": "../ServiceContracts/ServiceContracts.csproj",
@@ -3311,6 +3330,7 @@
       "Microsoft.Extensions.Configuration.Abstractions >= 9.0.9",
       "Microsoft.Extensions.Http >= 9.0.9",
       "Microsoft.Extensions.Identity.Core >= 9.0.9",
+      "RepositoryContracts >= 1.0.0",
       "ServiceContracts >= 1.0.0"
     ]
   },
@@ -3346,6 +3366,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\RepositoryContracts\\RepositoryContracts.csproj": {
+              "projectPath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\RepositoryContracts\\RepositoryContracts.csproj"
+            },
             "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\ServiceContracts\\ServiceContracts.csproj": {
               "projectPath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\ServiceContracts\\ServiceContracts.csproj"
             }

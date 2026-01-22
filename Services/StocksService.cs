@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Microsoft.EntityFrameworkCore;
+using RepositoryContracts;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Helpers;
@@ -13,64 +14,80 @@ namespace Services
 {
     public class StocksService : IStocksService
     {
-        StockMarketDbContext _db;
+        //private field
+        private readonly IStocksRepository _stocksRepository;
 
-        public StocksService(StockMarketDbContext stockMarketDbContext)
+
+        /// <summary>
+        /// Constructor of StocksService class that executes when a new object is created for the class
+        /// </summary>
+        public StocksService(IStocksRepository stocksRepository)
         {
-            _db = stockMarketDbContext;
+            _stocksRepository = stocksRepository;
         }
+
 
         public async Task<BuyOrderResponse> CreateBuyOrder(BuyOrderRequest? buyOrderRequest)
         {
+            //Validation: buyOrderRequest can't be null
             if (buyOrderRequest == null)
                 throw new ArgumentNullException(nameof(buyOrderRequest));
 
-            //ModelValidation
+            //Model validation
             ValidationHelper.ModelValidation(buyOrderRequest);
 
+            //convert buyOrderRequest into BuyOrder type
             BuyOrder buyOrder = buyOrderRequest.ToBuyOrder();
 
+            //generate BuyOrderID
             buyOrder.BuyOrderID = Guid.NewGuid();
 
-            _db.BuyOrders.Add(buyOrder);
-            await _db.SaveChangesAsync();
+            //add buy order object to buy orders list
+            BuyOrder buyOrderFromRepo = await _stocksRepository.CreateBuyOrder(buyOrder);
 
-
+            //convert the BuyOrder object into BuyOrderResponse type
             return buyOrder.ToBuyOrderResponse();
         }
 
+
         public async Task<SellOrderResponse> CreateSellOrder(SellOrderRequest? sellOrderRequest)
         {
+            //Validation: sellOrderRequest can't be null
             if (sellOrderRequest == null)
-                throw new ArgumentNullException();
+                throw new ArgumentNullException(nameof(sellOrderRequest));
 
-            //ModelValidation
+            //Model validation
             ValidationHelper.ModelValidation(sellOrderRequest);
 
+            //convert sellOrderRequest into SellOrder type
             SellOrder sellOrder = sellOrderRequest.ToSellOrder();
 
+            //generate SellOrderID
             sellOrder.SellOrderID = Guid.NewGuid();
 
-            _db.SellOrders.Add(sellOrder);
-            await _db.SaveChangesAsync();
+            //add sell order object to sell orders list
+            SellOrder SellOrderFromRepo = await _stocksRepository.CreateSellOrder(sellOrder);
 
+            //convert the SellOrder object into SellOrderResponse type
             return sellOrder.ToSellOrderResponse();
         }
 
+
         public async Task<List<BuyOrderResponse>> GetBuyOrders()
         {
-            List<BuyOrderResponse> result = await _db.BuyOrders
-                             .OrderByDescending(temp => temp.DateAndTimeOfOrder)
-                             .Select(temp => temp.ToBuyOrderResponse()).ToListAsync();
-            return result;
+            //Convert all BuyOrder objects into BuyOrderResponse objects
+            List<BuyOrder> buyOrders = await _stocksRepository.GetBuyOrders();
+
+            return buyOrders.Select(temp => temp.ToBuyOrderResponse()).ToList();
         }
+
 
         public async Task<List<SellOrderResponse>> GetSellOrders()
         {
-            List<SellOrderResponse> result = await _db.SellOrders
-                                        .OrderByDescending(temp => temp.DateAndTimeOfOrder)
-                                        .Select(temp => temp.ToSellOrderResponse()).ToListAsync();
-            return result;
+            //Convert all SellOrder objects into SellOrderResponse objects
+            List<SellOrder> sellOrders = await _stocksRepository.GetSellOrders();
+
+            return sellOrders.Select(temp => temp.ToSellOrderResponse()).ToList();
         }
     }
 }

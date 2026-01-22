@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Http;
 using Newtonsoft.Json.Linq;
+using RepositoryContracts;
 using ServiceContracts;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -9,82 +10,52 @@ namespace Services
 {
     public class FinnhubService : IFinnhubService
     {
-        private readonly IHttpClientFactory _httpClientFactory;
-        private readonly IConfiguration _configuaration;
+        private readonly IFinnhubRepository _finnhubRepository;
 
-        public FinnhubService(IHttpClientFactory httpClientFactory, IConfiguration configuration)
+
+        public FinnhubService(IFinnhubRepository finnhubRepository)
         {
-            _httpClientFactory = httpClientFactory;
-            _configuaration = configuration;
+            _finnhubRepository = finnhubRepository;
         }
+
 
         public async Task<Dictionary<string, object>?> GetCompanyProfile(string stockSymbol)
         {
-            using (HttpClient httpClient = _httpClientFactory.CreateClient())
-            {
+            //invoke repository
+            Dictionary<string, object>? responseDictionary = await _finnhubRepository.GetCompanyProfile(stockSymbol);
 
-
-                HttpRequestMessage httpRequestMessage = new HttpRequestMessage() 
-                {
-                    RequestUri = new Uri($"https://finnhub.io/api/v1/stock/profile2?symbol={stockSymbol}&token={_configuaration["FinnhubToken"]}"),
-                    Method = HttpMethod.Get
-                };
-
-                HttpResponseMessage httpResponseMessage =
-                        await httpClient.SendAsync(httpRequestMessage);
-
-                Stream stream = httpResponseMessage.Content.ReadAsStream();
-
-                StreamReader streamReader = new StreamReader(stream);
-                string response = streamReader.ReadToEnd();
-
-                Dictionary<string, object>? responseDictionary = JsonSerializer.Deserialize<Dictionary<string, object>>(response);
-
-                if (responseDictionary == null)
-                {
-                    throw new InvalidOperationException();
-                }
-                else if (responseDictionary.ContainsKey("error"))
-                {
-                    throw new InvalidOperationException(Convert.ToString(responseDictionary["error"]));
-                }
-                return responseDictionary;
-            } // here closes the connection 
+            //return response dictionary back to the caller
+            return responseDictionary;
         }
+
 
         public async Task<Dictionary<string, object>?> GetStockPriceQuote(string stockSymbol)
         {
+            //invoke repository
+            Dictionary<string, object>? responseDictionary = await _finnhubRepository.GetStockPriceQuote(stockSymbol);
 
-            using (HttpClient httpClient = _httpClientFactory.CreateClient())
-            {
+            //return response dictionary back to the caller
+            return responseDictionary;
+        }
 
 
-                HttpRequestMessage httpRequestMessage = new HttpRequestMessage()
-                {
-                    RequestUri = new Uri($"https://finnhub.io/api/v1/quote?symbol={stockSymbol}&token={_configuaration["FinnhubToken"]}"),
-                    Method = HttpMethod.Get
-                };
+        public async Task<List<Dictionary<string, string>>?> GetStocks()
+        {
+            //invoke repository
+            List<Dictionary<string, string>>? responseDictionary = await _finnhubRepository.GetStocks();
 
-                HttpResponseMessage httpResponseMessage =
-                        await httpClient.SendAsync(httpRequestMessage);
+            //return response dictionary back to the caller
+            return responseDictionary;
+        }
 
-                Stream stream = httpResponseMessage.Content.ReadAsStream();
 
-                StreamReader streamReader = new StreamReader(stream);
-                string response = streamReader.ReadToEnd();
+        public async Task<Dictionary<string, object>?> SearchStocks(string stockSymbolToSearch)
+        {
+            //invoke repository
+            Dictionary<string, object>? responseDictionary = await _finnhubRepository.SearchStocks(stockSymbolToSearch);
 
-                Dictionary<string, object>? responseDictionary = JsonSerializer.Deserialize<Dictionary<string, object>>(response);
-
-                if (responseDictionary == null)
-                {
-                    throw new InvalidOperationException();
-                }
-                else if (responseDictionary.ContainsKey("error"))
-                {
-                    throw new InvalidOperationException(Convert.ToString(responseDictionary["error"]));
-                }
-                return responseDictionary;
-            } // here closes the connection 
+            //return response dictionary back to the caller
+            return responseDictionary;
         }
     }
 }

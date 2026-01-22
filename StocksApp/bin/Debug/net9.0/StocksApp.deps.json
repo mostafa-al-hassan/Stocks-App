@@ -15,7 +15,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8",
           "Microsoft.Extensions.Http": "9.0.9",
           "Microsoft.Extensions.Identity.Core": "9.0.9",
+          "Repositories": "1.0.0",
+          "RepositoryContracts": "1.0.0",
           "Rotativa.AspNetCore": "1.4.0",
+          "ServiceContracts": "1.0.0",
           "Services": "1.0.0"
         },
         "runtime": {
@@ -1162,6 +1165,30 @@
           }
         }
       },
+      "Repositories/1.0.0": {
+        "dependencies": {
+          "Entities": "1.0.0",
+          "RepositoryContracts": "1.0.0"
+        },
+        "runtime": {
+          "Repositories.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "RepositoryContracts/1.0.0": {
+        "dependencies": {
+          "Entities": "1.0.0",
+          "ServiceContracts": "1.0.0"
+        },
+        "runtime": {
+          "RepositoryContracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "ServiceContracts/1.0.0": {
         "dependencies": {
           "Entities": "1.0.0",
@@ -1181,6 +1208,7 @@
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.9",
           "Microsoft.Extensions.Http": "9.0.9",
           "Microsoft.Extensions.Identity.Core": "9.0.9",
+          "RepositoryContracts": "1.0.0",
           "ServiceContracts": "1.0.0"
         },
         "runtime": {
@@ -1836,6 +1864,16 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Repositories/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RepositoryContracts/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

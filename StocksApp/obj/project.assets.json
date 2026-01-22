@@ -1844,6 +1844,34 @@
           "bin/placeholder/Entities.dll": {}
         }
       },
+      "Repositories/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "RepositoryContracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Repositories.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Repositories.dll": {}
+        }
+      },
+      "RepositoryContracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "ServiceContracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/RepositoryContracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RepositoryContracts.dll": {}
+        }
+      },
       "ServiceContracts/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -1867,6 +1895,7 @@
           "Microsoft.Extensions.Configuration.Abstractions": "9.0.9",
           "Microsoft.Extensions.Http": "9.0.9",
           "Microsoft.Extensions.Identity.Core": "9.0.9",
+          "RepositoryContracts": "1.0.0",
           "ServiceContracts": "1.0.0"
         },
         "compile": {
@@ -5278,6 +5307,16 @@
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
     },
+    "Repositories/1.0.0": {
+      "type": "project",
+      "path": "../Repositories/Repositories.csproj",
+      "msbuildProject": "../Repositories/Repositories.csproj"
+    },
+    "RepositoryContracts/1.0.0": {
+      "type": "project",
+      "path": "../RepositoryContracts/RepositoryContracts.csproj",
+      "msbuildProject": "../RepositoryContracts/RepositoryContracts.csproj"
+    },
     "ServiceContracts/1.0.0": {
       "type": "project",
       "path": "../ServiceContracts/ServiceContracts.csproj",
@@ -5298,7 +5337,10 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.8",
       "Microsoft.Extensions.Http >= 9.0.9",
       "Microsoft.Extensions.Identity.Core >= 9.0.9",
+      "Repositories >= 1.0.0",
+      "RepositoryContracts >= 1.0.0",
       "Rotativa.AspNetCore >= 1.4.0",
+      "ServiceContracts >= 1.0.0",
       "Services >= 1.0.0"
     ]
   },
@@ -5336,6 +5378,15 @@
           "projectReferences": {
             "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Entities\\Entities.csproj": {
               "projectPath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Entities\\Entities.csproj"
+            },
+            "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Repositories\\Repositories.csproj": {
+              "projectPath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Repositories\\Repositories.csproj"
+            },
+            "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\RepositoryContracts\\RepositoryContracts.csproj": {
+              "projectPath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\RepositoryContracts\\RepositoryContracts.csproj"
+            },
+            "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\ServiceContracts\\ServiceContracts.csproj": {
+              "projectPath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\ServiceContracts\\ServiceContracts.csproj"
             },
             "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Services\\Services.csproj": {
               "projectPath": "D:\\Courses\\.Net course(harsha)\\StocksApp\\StocksApp\\Services\\Services.csproj"

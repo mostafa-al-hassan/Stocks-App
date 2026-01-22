@@ -184,3 +184,7 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\bin\Debug\net9.0\ru
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\bin\Debug\net9.0\Rotativa.AspNetCore.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\obj\Debug\net9.0\StocksApp.MvcApplicationPartsAssemblyInfo.cs
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\bin\Debug\net9.0\RepositoryContracts.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\bin\Debug\net9.0\RepositoryContracts.pdb
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\bin\Debug\net9.0\Repositories.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\bin\Debug\net9.0\Repositories.pdb

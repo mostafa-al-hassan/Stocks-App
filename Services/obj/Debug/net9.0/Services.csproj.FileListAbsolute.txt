@@ -16,3 +16,5 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\ref
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\obj\Debug\net9.0\Services.sourcelink.json
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\bin\Debug\net9.0\Entities.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\bin\Debug\net9.0\Entities.pdb
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\bin\Debug\net9.0\RepositoryContracts.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Services\bin\Debug\net9.0\RepositoryContracts.pdb
