@@ -317,7 +317,6 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\S
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Data.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Diagnostics.Contracts.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Diagnostics.Debug.dll
-D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Diagnostics.DiagnosticSource.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Diagnostics.FileVersionInfo.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Diagnostics.Process.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Diagnostics.StackTrace.dll
@@ -346,7 +345,6 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\S
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.IO.FileSystem.Watcher.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.IO.IsolatedStorage.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.IO.MemoryMappedFiles.dll
-D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.IO.Pipelines.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.IO.Pipes.AccessControl.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.IO.Pipes.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.IO.UnmanagedMemoryStream.dll
@@ -425,8 +423,6 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\S
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Text.Encoding.CodePages.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Text.Encoding.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Text.Encoding.Extensions.dll
-D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Text.Encodings.Web.dll
-D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Text.Json.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Text.RegularExpressions.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Threading.Channels.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\refs\System.Threading.dll
@@ -480,3 +476,19 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\System
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Diagnostics.EventLog.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\obj\Debug\net9.0\MvcTestingAppManifest.json
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\libman.json
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\Serilog.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\Serilog.AspNetCore.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\Serilog.Extensions.Hosting.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\Serilog.Extensions.Logging.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\Serilog.Formatting.Compact.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\Serilog.Settings.Configuration.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\Serilog.Sinks.Console.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\Serilog.Sinks.Debug.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\Serilog.Sinks.File.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\Serilog.Sinks.Seq.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\System.Diagnostics.DiagnosticSource.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\System.IO.Pipelines.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\System.Text.Encodings.Web.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\System.Text.Json.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\Tests\bin\Debug\net9.0\runtimes\win\lib\net9.0\System.Text.Encodings.Web.dll

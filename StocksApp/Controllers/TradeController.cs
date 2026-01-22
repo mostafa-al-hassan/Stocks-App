@@ -18,13 +18,15 @@ namespace StocksApp.Controllers
         private readonly IStocksService _stocksService;
         private readonly IFinnhubService _finnhubService;
         private readonly IConfiguration _configuration;
+        private readonly ILogger<TradeController> _logger;
 
-        public TradeController(IOptions<TradingOptions> tradingOptions, IStocksService stocksService, IFinnhubService finnhubService, IConfiguration configuration)
+        public TradeController(IOptions<TradingOptions> tradingOptions, IStocksService stocksService, IFinnhubService finnhubService, IConfiguration configuration, ILogger<TradeController> logger)
         {
             _tradingOptions = tradingOptions.Value;
             _stocksService = stocksService;
             _finnhubService = finnhubService;
             _configuration = configuration;
+            _logger = logger;
         }
 
         [Route("~/[controller]")]
@@ -32,6 +34,11 @@ namespace StocksApp.Controllers
         [Route("~/[controller]/{stockSymbol}")]
         public async Task<IActionResult> Index(string stockSymbol)
         {
+
+            //logger
+            _logger.LogInformation("In TradeController.Index() action method");
+            _logger.LogDebug("stockSymbol: {stockSymbol}", stockSymbol);
+
             //reset stock symbol if not exists
             if (string.IsNullOrEmpty(stockSymbol))
                 stockSymbol = "MSFT";
