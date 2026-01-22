@@ -188,3 +188,4 @@ D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\bin\Debug\net9.0\Re
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\bin\Debug\net9.0\RepositoryContracts.pdb
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\bin\Debug\net9.0\Repositories.dll
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\bin\Debug\net9.0\Repositories.pdb
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\bin\Debug\net9.0\libman.json
