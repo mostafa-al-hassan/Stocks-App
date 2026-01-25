@@ -6,6 +6,7 @@ using Rotativa.AspNetCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using StockMarketSolution.Models;
+using StocksApp.Filters.ActionFilters;
 using StocksApp.Models;
 using System.Collections.Generic;
 
@@ -68,22 +69,10 @@ namespace StocksApp.Controllers
 
         [Route("[action]")]
         [HttpPost]
+        [TypeFilter(typeof(CreateOrderActionFilter))]
         public async Task<IActionResult> BuyOrder(BuyOrderRequest buyOrderRequest)
         {
-            //update date of order
-            buyOrderRequest.DateAndTimeOfOrder = DateTime.Now;
-
-            //re-validate the model object after updating the date
-            ModelState.Clear();
-            TryValidateModel(buyOrderRequest);
-
-
-            if (!ModelState.IsValid)
-            {
-                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
-                StockTrade stockTrade = new StockTrade() { StockName = buyOrderRequest.StockName, Quantity = buyOrderRequest.Quantity, StockSymbol = buyOrderRequest.StockSymbol };
-                return View("Index", stockTrade);
-            }
+            //model validation moved to filter
 
             //invoke service method
             BuyOrderResponse buyOrderResponse = await _stocksService.CreateBuyOrder(buyOrderRequest);
@@ -94,21 +83,10 @@ namespace StocksApp.Controllers
 
         [Route("[action]")]
         [HttpPost]
+        [TypeFilter(typeof(CreateOrderActionFilter))]
         public async Task<IActionResult> SellOrder(SellOrderRequest sellOrderRequest)
         {
-            //update date of order
-            sellOrderRequest.DateAndTimeOfOrder = DateTime.Now;
-
-            //re-validate the model object after updating the date
-            ModelState.Clear();
-            TryValidateModel(sellOrderRequest);
-
-            if (!ModelState.IsValid)
-            {
-                ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
-                StockTrade stockTrade = new StockTrade() { StockName = sellOrderRequest.StockName, Quantity = sellOrderRequest.Quantity, StockSymbol = sellOrderRequest.StockSymbol };
-                return View("Index", stockTrade);
-            }
+            // model validation moved to filter
 
             //invoke service method
             SellOrderResponse sellOrderResponse = await _stocksService.CreateSellOrder(sellOrderRequest);
