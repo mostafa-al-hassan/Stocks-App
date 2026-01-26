@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Moq;
 using ServiceContracts;
-using StockMarketSolution.Controllers;
+using StocksApp.Controllers;
 using StocksApp;
 using System;
 using System.Collections.Generic;

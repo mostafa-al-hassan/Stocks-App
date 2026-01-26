@@ -34,10 +34,10 @@ if (!builder.Environment.IsEnvironment("Test"))
     });
 }
 
-builder.Services.AddHttpLogging(options =>
-{
-    options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.RequestProperties | Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.ResponsePropertiesAndHeaders;
-});
+//builder.Services.AddHttpLogging(options =>
+//{
+//    options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.RequestProperties | Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.ResponsePropertiesAndHeaders;
+//});
 
 builder.Services.AddHttpClient();
 var app = builder.Build();
@@ -46,12 +46,16 @@ if (builder.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+else
+{
+    app.UseExceptionHandler("/Error");
+}
 
 if (builder.Environment.IsEnvironment("Test") == false)
     Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
 
 
-app.UseHttpLogging();
+//app.UseHttpLogging();
 
 app.UseStaticFiles();
 app.UseRouting();

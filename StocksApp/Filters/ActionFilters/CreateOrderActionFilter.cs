@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
+using ServiceContracts.DTO;
 using StocksApp.Controllers;
 using StocksApp.Models;
 

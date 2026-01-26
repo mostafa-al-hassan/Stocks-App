@@ -4,12 +4,12 @@ using Microsoft.Extensions.Options;
 using Rotativa.AspNetCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
-using StockMarketSolution.Models;
+using StocksApp.Models;
 using StocksApp;
 using System.Diagnostics;
 using System.Text.Json;
 
-namespace StockMarketSolution.Controllers
+namespace StocksApp.Controllers
 {
     [Route("[controller]")]
     public class StocksController : Controller

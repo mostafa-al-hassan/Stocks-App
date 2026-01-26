@@ -5,7 +5,6 @@ using Rotativa;
 using Rotativa.AspNetCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
-using StockMarketSolution.Models;
 using StocksApp.Filters.ActionFilters;
 using StocksApp.Models;
 using System.Collections.Generic;
@@ -70,12 +69,12 @@ namespace StocksApp.Controllers
         [Route("[action]")]
         [HttpPost]
         [TypeFilter(typeof(CreateOrderActionFilter))]
-        public async Task<IActionResult> BuyOrder(BuyOrderRequest buyOrderRequest)
+        public async Task<IActionResult> BuyOrder(BuyOrderRequest orderRequest)
         {
             //model validation moved to filter
 
             //invoke service method
-            BuyOrderResponse buyOrderResponse = await _stocksService.CreateBuyOrder(buyOrderRequest);
+            BuyOrderResponse buyOrderResponse = await _stocksService.CreateBuyOrder(orderRequest);
 
             return RedirectToAction(nameof(Orders));
         }
@@ -84,12 +83,12 @@ namespace StocksApp.Controllers
         [Route("[action]")]
         [HttpPost]
         [TypeFilter(typeof(CreateOrderActionFilter))]
-        public async Task<IActionResult> SellOrder(SellOrderRequest sellOrderRequest)
+        public async Task<IActionResult> SellOrder(SellOrderRequest orderRequest)
         {
             // model validation moved to filter
 
             //invoke service method
-            SellOrderResponse sellOrderResponse = await _stocksService.CreateSellOrder(sellOrderRequest);
+            SellOrderResponse sellOrderResponse = await _stocksService.CreateSellOrder(orderRequest);
 
             return RedirectToAction(nameof(Orders));
         }

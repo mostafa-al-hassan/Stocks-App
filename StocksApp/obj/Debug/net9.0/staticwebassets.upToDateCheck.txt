@@ -1,5 +1,7 @@
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\wwwroot\StyleSheet.css
 D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\wwwroot\Scripts\FinnhubScript.js
+D:\Courses\.Net course(harsha)\StocksApp\StocksApp\StocksApp\wwwroot\error.svg
+wwwroot\error.svg
 wwwroot\Rotativa\wkhtmltopdf.exe
 wwwroot\Scripts\FinnhubScript.js
 wwwroot\StyleSheet.css

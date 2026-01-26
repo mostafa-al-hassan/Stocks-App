@@ -1,6 +1,6 @@
 ﻿using ServiceContracts.DTO;
 
-namespace StockMarketSolution.Models
+namespace StocksApp.Models
 {
     /// <summary>
     /// Represents model class to supply list of buy orders and sell orders to the Trades/Orders view
