@@ -1,22 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using ServiceContracts;
+using ServiceContracts.FinnhubService;
 
 namespace StocksApp.ViewComponents
 {
     public class SelectedStockViewComponent : ViewComponent
     {
-        private readonly TradingOptions _tradingOptions;
-        private readonly IStocksService _stocksService;
-        private readonly IFinnhubService _finnhubService;
-        private readonly IConfiguration _configuration;
+        private readonly IFinnhubCompanyProfileService _finnhubCompanyProfileService;
+        
+        private readonly IFinnhubStockPriceQuoteService _finnhubStockPriceQuoteService;
 
-        public SelectedStockViewComponent(IOptions<TradingOptions> tradingOptions, IStocksService stocksService, IFinnhubService finnhubService, IConfiguration configuration)
+        public SelectedStockViewComponent( IFinnhubCompanyProfileService finnhubCompanyProfileService, IFinnhubStockPriceQuoteService finnhubStockPriceQuoteService)
         {
-            _tradingOptions = tradingOptions.Value;
-            _stocksService = stocksService;
-            _finnhubService = finnhubService;
-            _configuration = configuration;
+            _finnhubStockPriceQuoteService = finnhubStockPriceQuoteService;
+            _finnhubCompanyProfileService = finnhubCompanyProfileService;
         }
 
         public async Task<IViewComponentResult> InvokeAsync(string? stockSymbol)
@@ -25,8 +23,8 @@ namespace StocksApp.ViewComponents
 
             if (stockSymbol != null)
             {
-                companyProfileDict = await _finnhubService.GetCompanyProfile(stockSymbol);
-                var stockPriceDict = await _finnhubService.GetStockPriceQuote(stockSymbol);
+                companyProfileDict = await _finnhubCompanyProfileService.GetCompanyProfile(stockSymbol);
+                var stockPriceDict = await _finnhubStockPriceQuoteService.GetStockPriceQuote(stockSymbol);
                 if (stockPriceDict != null && companyProfileDict != null)
                 {
                     companyProfileDict.Add("price", stockPriceDict["c"]);

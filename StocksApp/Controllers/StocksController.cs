@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Rotativa.AspNetCore;
-using ServiceContracts;
 using ServiceContracts.DTO;
 using StocksApp.Models;
 using StocksApp;
 using System.Diagnostics;
 using System.Text.Json;
+using ServiceContracts.FinnhubService;
 
 namespace StocksApp.Controllers
 {
@@ -15,13 +15,23 @@ namespace StocksApp.Controllers
     public class StocksController : Controller
     {
         private readonly TradingOptions _tradingOptions;
-        private readonly IFinnhubService _finnhubService;
+
+        private readonly IFinnhubCompanyProfileService _finnhubCompanyProfileService;
+        private readonly IFinnhubSearchStocksService _finnhubSearchStocksService;
+        private readonly IFinnhubStockPriceQuoteService _finnhubStockPriceQuoteService;
+        private readonly IFinnhubStocksService _finnhubStocksService;
+
         private readonly ILogger<StocksController> _logger;
 
-        public StocksController(IOptions<TradingOptions> tradingOptions, IFinnhubService finnhubService, ILogger<StocksController> logger)
+        public StocksController(IOptions<TradingOptions> tradingOptions, IFinnhubCompanyProfileService finnhubCompanyProfileService, IFinnhubSearchStocksService finnhubSearchStocksService, IFinnhubStockPriceQuoteService finnhubStockPriceQuoteService, IFinnhubStocksService finnhubStocksService, ILogger<StocksController> logger)
         {
             _tradingOptions = tradingOptions.Value;
-            _finnhubService = finnhubService;
+
+            _finnhubCompanyProfileService = finnhubCompanyProfileService;
+            _finnhubSearchStocksService = finnhubSearchStocksService;
+            _finnhubStockPriceQuoteService = finnhubStockPriceQuoteService;
+            _finnhubStocksService = finnhubStocksService;
+
             _logger = logger;
         }
 
@@ -36,7 +46,7 @@ namespace StocksApp.Controllers
             _logger.LogDebug("stock: {stock}, showAll: {showAll}", stock, showAll);
 
             //get company profile from API server
-            List<Dictionary<string, string>>? stocksDictionary = await _finnhubService.GetStocks();
+            List<Dictionary<string, string>>? stocksDictionary = await _finnhubStocksService.GetStocks();
 
             List<Stock> stocks = new List<Stock>();
 

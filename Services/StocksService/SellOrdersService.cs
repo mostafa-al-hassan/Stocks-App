@@ -10,9 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Services
+namespace Services.StocksService
 {
-    public class StocksService : IStocksService
+    public class SellOrdersService : ISellOrdersService
     {
         //private field
         private readonly IStocksRepository _stocksRepository;
@@ -21,34 +21,10 @@ namespace Services
         /// <summary>
         /// Constructor of StocksService class that executes when a new object is created for the class
         /// </summary>
-        public StocksService(IStocksRepository stocksRepository)
+        public SellOrdersService(IStocksRepository stocksRepository)
         {
             _stocksRepository = stocksRepository;
         }
-
-
-        public async Task<BuyOrderResponse> CreateBuyOrder(BuyOrderRequest? buyOrderRequest)
-        {
-            //Validation: buyOrderRequest can't be null
-            if (buyOrderRequest == null)
-                throw new ArgumentNullException(nameof(buyOrderRequest));
-
-            //Model validation
-            ValidationHelper.ModelValidation(buyOrderRequest);
-
-            //convert buyOrderRequest into BuyOrder type
-            BuyOrder buyOrder = buyOrderRequest.ToBuyOrder();
-
-            //generate BuyOrderID
-            buyOrder.BuyOrderID = Guid.NewGuid();
-
-            //add buy order object to buy orders list
-            BuyOrder buyOrderFromRepo = await _stocksRepository.CreateBuyOrder(buyOrder);
-
-            //convert the BuyOrder object into BuyOrderResponse type
-            return buyOrder.ToBuyOrderResponse();
-        }
-
 
         public async Task<SellOrderResponse> CreateSellOrder(SellOrderRequest? sellOrderRequest)
         {
@@ -70,15 +46,6 @@ namespace Services
 
             //convert the SellOrder object into SellOrderResponse type
             return sellOrder.ToSellOrderResponse();
-        }
-
-
-        public async Task<List<BuyOrderResponse>> GetBuyOrders()
-        {
-            //Convert all BuyOrder objects into BuyOrderResponse objects
-            List<BuyOrder> buyOrders = await _stocksRepository.GetBuyOrders();
-
-            return buyOrders.Select(temp => temp.ToBuyOrderResponse()).ToList();
         }
 
 

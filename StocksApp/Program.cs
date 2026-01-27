@@ -5,7 +5,9 @@ using RepositoryContracts;
 using Rotativa.AspNetCore;
 using Serilog;
 using ServiceContracts;
-using Services;
+using ServiceContracts.FinnhubService;
+using Services.FinnhubService;
+using Services.StocksService;
 using StocksApp;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,8 +23,12 @@ loggerConfiguration.ReadFrom.Configuration(context.Configuration) //read configu
 //Services
 builder.Services.AddControllersWithViews();
 builder.Services.Configure<TradingOptions>(builder.Configuration.GetSection("TradingOptions"));
-builder.Services.AddTransient<IStocksService, StocksService>();
-builder.Services.AddTransient<IFinnhubService, FinnhubService>();
+builder.Services.AddTransient<IBuyOrdersService, BuyOrdersService>();
+builder.Services.AddTransient<ISellOrdersService, SellOrdersService>();
+builder.Services.AddTransient<IFinnhubCompanyProfileService, FinnhubCompanyProfileService>();
+builder.Services.AddTransient<IFinnhubStockPriceQuoteService, FinnhubStockPriceQuoteService>();
+builder.Services.AddTransient<IFinnhubStocksService, FinnhubStocksService>();
+builder.Services.AddTransient<IFinnhubSearchStocksService, FinnhubSearchStocksService>();
 builder.Services.AddTransient<IStocksRepository, StocksRepository>();
 builder.Services.AddTransient<IFinnhubRepository, FinnhubRepository>();
 

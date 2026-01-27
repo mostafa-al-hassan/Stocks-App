@@ -1,31 +1,10 @@
 ﻿using System.Diagnostics.Metrics;
 using System.Runtime.Intrinsics.Arm;
 
-namespace ServiceContracts
+namespace ServiceContracts.FinnhubService
 {
-    public interface IFinnhubService
+    public interface IFinnhubSearchStocksService
     {
-        /// <summary>
-        /// creates a connection and then gets a StockPriceQuote Response Dictionary from Finnhub.io 
-        /// </summary>
-        /// <param name="stockSymbol">the Company stockSymbol you want stock info about </param>
-        /// <returns>returns a Response Dictionary which has key value pairs of Quote Response Attributes (search for it, it is in a comment below) </returns>
-        Task<Dictionary<string, object>?> GetStockPriceQuote(string stockSymbol);
-
-        /// <summary>
-        /// creates a connection and then gets a Company Profile Response Dictionary from Finnhub.io
-        /// </summary>
-        /// <param name="stockSymbol">the Company stockSymbol you want stock info about </param>
-        /// <returns></returns>
-        Task<Dictionary<string, object>?> GetCompanyProfile(string stockSymbol);
-
-        /// <summary>
-        /// Returns list of all stocks supported by an exchange (default: US)
-        /// </summary>
-        /// <returns>List of stocks</returns>
-        Task<List<Dictionary<string, string>>?> GetStocks();
-
-
         /// <summary>
         /// Returns list of matching stocks based on the given stock symbol
         /// </summary>

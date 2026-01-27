@@ -7,6 +7,7 @@ using RepositoryContracts;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using Services;
+using Services.StocksService;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
@@ -15,7 +16,8 @@ namespace Tests.ServiceTests
 {
     public class StocksServiceTest
     {
-        private readonly IStocksService _stocksService;
+        private readonly IBuyOrdersService _buyOrdersService;
+        private readonly ISellOrdersService _sellOrdersService;
 
         private readonly Mock<IStocksRepository> _stocksRepositoryMock;
         private readonly IStocksRepository _stocksRepository;
@@ -29,7 +31,8 @@ namespace Tests.ServiceTests
             _stocksRepositoryMock = new Mock<IStocksRepository>();
             _stocksRepository = _stocksRepositoryMock.Object;
 
-            _stocksService = new StocksService(_stocksRepository);
+            _buyOrdersService = new BuyOrdersService(_stocksRepository);
+            _sellOrdersService = new SellOrdersService(_stocksRepository); 
         }
 
 
@@ -48,7 +51,7 @@ namespace Tests.ServiceTests
             _stocksRepositoryMock.Setup(temp => temp.GetBuyOrders()).ReturnsAsync(buyOrders);
 
             //Act
-            List<BuyOrderResponse> buyOrdersFromGet = await _stocksService.GetBuyOrders();
+            List<BuyOrderResponse> buyOrdersFromGet = await _buyOrdersService.GetBuyOrders();
 
             //Assert
             Assert.Empty(buyOrdersFromGet);
@@ -71,7 +74,7 @@ namespace Tests.ServiceTests
             _stocksRepositoryMock.Setup(temp => temp.GetBuyOrders()).ReturnsAsync(buyOrder_requests);
 
             //Act
-            List<BuyOrderResponse> buyOrders_list_from_get = await _stocksService.GetBuyOrders();
+            List<BuyOrderResponse> buyOrders_list_from_get = await _buyOrdersService.GetBuyOrders();
 
 
             //Assert
@@ -96,7 +99,7 @@ namespace Tests.ServiceTests
             //Act
             Func<Task> action = async () =>
             {
-                await _stocksService.CreateBuyOrder(buyOrderRequest);
+                await _buyOrdersService.CreateBuyOrder(buyOrderRequest);
             };
 
             //Assert
@@ -120,7 +123,7 @@ namespace Tests.ServiceTests
             //Act
             Func<Task> action = async () =>
             {
-                await _stocksService.CreateBuyOrder(buyOrderRequest);
+                await _buyOrdersService.CreateBuyOrder(buyOrderRequest);
             };
 
             //Assert
@@ -144,7 +147,7 @@ namespace Tests.ServiceTests
             //Act
             Func<Task> action = async () =>
             {
-                await _stocksService.CreateBuyOrder(buyOrderRequest);
+                await _buyOrdersService.CreateBuyOrder(buyOrderRequest);
             };
 
             //Assert
@@ -166,7 +169,7 @@ namespace Tests.ServiceTests
             //Act
             Func<Task> action = async () =>
             {
-                await _stocksService.CreateBuyOrder(buyOrderRequest);
+                await _buyOrdersService.CreateBuyOrder(buyOrderRequest);
             };
 
             //Assert
@@ -190,7 +193,7 @@ namespace Tests.ServiceTests
             //Act
             Func<Task> action = async () =>
             {
-                await _stocksService.CreateBuyOrder(buyOrderRequest);
+                await _buyOrdersService.CreateBuyOrder(buyOrderRequest);
             };
 
             //Assert
@@ -209,7 +212,7 @@ namespace Tests.ServiceTests
             _stocksRepositoryMock.Setup(temp => temp.CreateBuyOrder(It.IsAny<BuyOrder>())).ReturnsAsync(buyOrder);
 
             //Act
-            BuyOrderResponse buyOrderResponseFromCreate = await _stocksService.CreateBuyOrder(buyOrderRequest);
+            BuyOrderResponse buyOrderResponseFromCreate = await _buyOrdersService.CreateBuyOrder(buyOrderRequest);
 
             //Assert
             buyOrder.BuyOrderID = buyOrderResponseFromCreate.BuyOrderID;
@@ -238,7 +241,7 @@ namespace Tests.ServiceTests
             //Act
             Func<Task> action = async () =>
             {
-                await _stocksService.CreateSellOrder(sellOrderRequest);
+                await _sellOrdersService.CreateSellOrder(sellOrderRequest);
             };
 
             //Assert
@@ -262,7 +265,7 @@ namespace Tests.ServiceTests
             //Act
             Func<Task> action = async () =>
             {
-                await _stocksService.CreateSellOrder(sellOrderRequest);
+                await _sellOrdersService.CreateSellOrder(sellOrderRequest);
             };
 
             //Assert
@@ -286,7 +289,7 @@ namespace Tests.ServiceTests
             //Act
             Func<Task> action = async () =>
             {
-                await _stocksService.CreateSellOrder(sellOrderRequest);
+                await _sellOrdersService.CreateSellOrder(sellOrderRequest);
             };
 
             //Assert
@@ -310,7 +313,7 @@ namespace Tests.ServiceTests
             _stocksRepositoryMock.Setup(temp => temp.GetSellOrders()).ReturnsAsync(sellOrders);
 
             //Act
-            List<SellOrderResponse> sellOrdersFromGet = await _stocksService.GetSellOrders();
+            List<SellOrderResponse> sellOrdersFromGet = await _sellOrdersService.GetSellOrders();
 
             //Assert
             Assert.Empty(sellOrdersFromGet);
@@ -333,7 +336,7 @@ namespace Tests.ServiceTests
             _stocksRepositoryMock.Setup(temp => temp.GetSellOrders()).ReturnsAsync(sellOrder_requests);
 
             //Act
-            List<SellOrderResponse> sellOrders_list_from_get = await _stocksService.GetSellOrders();
+            List<SellOrderResponse> sellOrders_list_from_get = await _sellOrdersService.GetSellOrders();
 
 
             //Assert

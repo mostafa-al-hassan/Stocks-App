@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace ServiceContracts
 {
-    public interface IStocksService
+    public interface IBuyOrdersService
     {
         Task<BuyOrderResponse> CreateBuyOrder(BuyOrderRequest? buyOrderRequest);
 
-        Task<SellOrderResponse> CreateSellOrder(SellOrderRequest? sellOrderRequest);
 
         Task<List<BuyOrderResponse>> GetBuyOrders();
-
-        Task<List<SellOrderResponse>> GetSellOrders();
     }
 }

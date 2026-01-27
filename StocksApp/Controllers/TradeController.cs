@@ -5,6 +5,7 @@ using Rotativa;
 using Rotativa.AspNetCore;
 using ServiceContracts;
 using ServiceContracts.DTO;
+using ServiceContracts.FinnhubService;
 using StocksApp.Filters.ActionFilters;
 using StocksApp.Models;
 using System.Collections.Generic;
@@ -15,16 +16,30 @@ namespace StocksApp.Controllers
     public class TradeController : Controller
     {
         private readonly TradingOptions _tradingOptions;
-        private readonly IStocksService _stocksService;
-        private readonly IFinnhubService _finnhubService;
+        private readonly IBuyOrdersService _buyOrdersService;
+        private readonly ISellOrdersService _sellOrdersService;
+
+        private readonly IFinnhubCompanyProfileService _finnhubCompanyProfileService;
+        private readonly IFinnhubSearchStocksService _finnhubSearchStocksService;
+        private readonly IFinnhubStockPriceQuoteService _finnhubStockPriceQuoteService;
+        private readonly IFinnhubStocksService _finnhubStocksService;
+
         private readonly IConfiguration _configuration;
         private readonly ILogger<TradeController> _logger;
 
-        public TradeController(IOptions<TradingOptions> tradingOptions, IStocksService stocksService, IFinnhubService finnhubService, IConfiguration configuration, ILogger<TradeController> logger)
+        public TradeController(IOptions<TradingOptions> tradingOptions, IBuyOrdersService buyOrdersService, ISellOrdersService sellOrdersService, IFinnhubCompanyProfileService finnhubCompanyProfileService, IFinnhubSearchStocksService finnhubSearchStocksService, IFinnhubStockPriceQuoteService finnhubStockPriceQuoteService, IFinnhubStocksService finnhubStocksService, IConfiguration configuration, ILogger<TradeController> logger)
         {
             _tradingOptions = tradingOptions.Value;
-            _stocksService = stocksService;
-            _finnhubService = finnhubService;
+
+            _buyOrdersService = buyOrdersService;
+            _sellOrdersService = sellOrdersService;
+
+            _finnhubStocksService = finnhubStocksService;
+            _finnhubStockPriceQuoteService = finnhubStockPriceQuoteService;
+            _finnhubSearchStocksService = finnhubSearchStocksService;
+            _finnhubCompanyProfileService = finnhubCompanyProfileService;
+
+
             _configuration = configuration;
             _logger = logger;
         }
@@ -45,10 +60,10 @@ namespace StocksApp.Controllers
 
 
             //get company profile from API server
-            Dictionary<string, object>? companyProfileDictionary = await _finnhubService.GetCompanyProfile(stockSymbol);
+            Dictionary<string, object>? companyProfileDictionary = await _finnhubCompanyProfileService.GetCompanyProfile(stockSymbol);
 
             //get stock price quotes from API server
-            Dictionary<string, object>? stockQuoteDictionary = await _finnhubService.GetStockPriceQuote(stockSymbol);
+            Dictionary<string, object>? stockQuoteDictionary = await _finnhubStockPriceQuoteService.GetStockPriceQuote(stockSymbol);
 
 
             //create model object
@@ -74,7 +89,7 @@ namespace StocksApp.Controllers
             //model validation moved to filter
 
             //invoke service method
-            BuyOrderResponse buyOrderResponse = await _stocksService.CreateBuyOrder(orderRequest);
+            BuyOrderResponse buyOrderResponse = await _buyOrdersService.CreateBuyOrder(orderRequest);
 
             return RedirectToAction(nameof(Orders));
         }
@@ -88,7 +103,7 @@ namespace StocksApp.Controllers
             // model validation moved to filter
 
             //invoke service method
-            SellOrderResponse sellOrderResponse = await _stocksService.CreateSellOrder(orderRequest);
+            SellOrderResponse sellOrderResponse = await _sellOrdersService.CreateSellOrder(orderRequest);
 
             return RedirectToAction(nameof(Orders));
         }
@@ -98,8 +113,8 @@ namespace StocksApp.Controllers
         public async Task<IActionResult> Orders()
         {
             //invoke service methods
-            List<BuyOrderResponse> buyOrderResponses = await _stocksService.GetBuyOrders();
-            List<SellOrderResponse> sellOrderResponses = await _stocksService.GetSellOrders();
+            List<BuyOrderResponse> buyOrderResponses = await _buyOrdersService.GetBuyOrders();
+            List<SellOrderResponse> sellOrderResponses = await _sellOrdersService.GetSellOrders();
 
             //create model object
             Orders orders = new Orders() { BuyOrders = buyOrderResponses, SellOrders = sellOrderResponses };
@@ -114,8 +129,8 @@ namespace StocksApp.Controllers
         {
             //Get list of orders
             List<IOrderResponse> orders = new List<IOrderResponse>();
-            orders.AddRange(await _stocksService.GetBuyOrders());
-            orders.AddRange(await _stocksService.GetSellOrders());
+            orders.AddRange(await _buyOrdersService.GetBuyOrders());
+            orders.AddRange(await _sellOrdersService.GetSellOrders());
             orders = orders.OrderByDescending(temp => temp.DateAndTimeOfOrder).ToList();
 
             ViewBag.TradingOptions = _tradingOptions;
