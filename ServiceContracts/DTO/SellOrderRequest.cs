@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ServiceContracts.DTO
 {
-    public class SellOrderRequest
+    public class SellOrderRequest : IOrderRequest
     {
 
         [Required]

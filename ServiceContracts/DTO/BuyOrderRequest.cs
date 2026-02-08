@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ServiceContracts.DTO
 {
-    public class BuyOrderRequest
+    public class BuyOrderRequest : IOrderRequest
     {
 
         [Required]
