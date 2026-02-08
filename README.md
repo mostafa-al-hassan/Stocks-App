@@ -33,7 +33,7 @@ Get free token from [finnhub.io](https://finnhub.io/) and add to `appsettings.js
 ```bash
 dotnet run
 ```
-Visit: `https://localhost:5001/Trade`
+Visit: `https://localhost:5185`
 
 ## Architecture
 ```
